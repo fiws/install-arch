@@ -20,7 +20,7 @@ mount /dev/sda1 /mnt
 
 # Install base system, fstab, grub
 pacstrap /mnt base base-devel
-genfstab -p /mnt >> /mnt/etc/fstab
+genfstab -pU /mnt >> /mnt/etc/fstab
 pacstrap /mnt grub-bios
 
 # Keyboard, locale, time
