@@ -33,7 +33,7 @@ locale-gen
 sudo hwclock --hctosys --localtime
 
 # Set the root password
-echo "root:123456" | chpasswd
+echo "root:1" | chpasswd
 
 # Install Grub
 grub-install --recheck /dev/sda
