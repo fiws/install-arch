@@ -20,15 +20,15 @@ mount /dev/sda1 /mnt
 
 # Install base system, fstab, grub
 pacstrap /mnt base base-devel
-genfstab -pU /mnt >> /mnt/etc/fstab
+genfstab -p /mnt >> /mnt/etc/fstab
 pacstrap /mnt grub-bios
 
 # Keyboard, locale, time
 arch-chroot /mnt /bin/bash -c '
-echo "KEYMAP=uk" > /etc/vconsole.conf
-echo "en_GB.UTF-8 UTF-8" >> /etc/locale.gen
-echo "LANG=en_GB.UTF-8" > /etc/locale.conf
-ln -s /usr/share/zoneinfo/GB /etc/localtime
+echo "KEYMAP=us" > /etc/vconsole.conf
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+ln -s /usr/share/zoneinfo/US/Eastern /etc/localtime
 locale-gen
 sudo hwclock --hctosys --localtime
 
@@ -36,15 +36,12 @@ sudo hwclock --hctosys --localtime
 echo "root:123456" | chpasswd
 
 # Install Grub
-grub-install --target=i386-pc --recheck /dev/sda
+grub-install --recheck /dev/sda
 echo GRUB_DISABLE_SUBMENU=y >> /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # Ensure DHCP service can start
 systemctl enable dhcpcd.service
-
-# Install OpenSSH
-pacman -S --noconfirm openssh
 ' # END OF CHROOT
 
 umount -R /mnt
