@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Arch Linux Bootstrap Script
-# 
+#
 # See comments below for running
 #
 
@@ -15,7 +15,7 @@ w
 "|fdisk /dev/sda
 
 # Format and mount drive
-mkfs -t ext4 /dev/sda1
+mkfs -F -t ext4 /dev/sda1
 mount /dev/sda1 /mnt
 
 # Install base system, fstab, grub
