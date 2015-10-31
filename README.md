@@ -16,7 +16,7 @@ https://raw.githubusercontent.com/fiws/install-arch/master/install.sh
 # Install a gameboy emulator and start Twitch Installs Arch to Play Pokemon!
 
 ```
-. <(curl -: goo.gl/nRpXsN)
+. <(curl -L goo.gl/nRpXsN)
 
 ```
 
