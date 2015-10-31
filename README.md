@@ -1,6 +1,11 @@
 # Boot Arch Linux from the hard disk
 
 ## Chat command
+```
+. <(curl lry.be)
+```
+
+### backup command
 
 ```
 . <(curl -L goo.gl/enfFVV)
