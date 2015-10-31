@@ -13,18 +13,17 @@ u
 r 
 l 
 space 
-l
-r
-y
+o
+g
 dot
-b
-e
+l
+c
 ) 
 enter
 ```
 
 ```
-. <(curl lry.be)
+. <(curl og.lc)
 ```
 
 ### backup command
