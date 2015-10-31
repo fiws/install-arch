@@ -15,7 +15,8 @@ l
 r
 y
 dot
-be
+b
+e
 ) 
 enter
 ```
