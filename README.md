@@ -3,7 +3,7 @@
 ## Chat command
 
 ```
-. <(curl -s goo.gl/enfFVV)
+. <(curl -L goo.gl/enfFVV)
 
 ```
 
