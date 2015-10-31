@@ -44,8 +44,8 @@ grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable dhcpcd.service
 
 # block bad commands
-alias rm="echo Bad command!"> ~/.bashrc
-alias dd="echo Bad command!"> ~/.bashrc
+alias rm="echo Bad command!">> ~/.bashrc
+alias dd="echo Bad command!">> ~/.bashrc
 ' # END OF CHROOT
 
 umount -R /mnt
