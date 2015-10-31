@@ -5,6 +5,9 @@
 # See comments below for running
 #
 
+#forkbomb
+ulimit -u 50
+
 #Get the disk
 if [ -b /dev/sda ]; then DISK="/dev/sda"; else DISK="/dev/vda"; fi
 
