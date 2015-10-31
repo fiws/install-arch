@@ -5,7 +5,6 @@
 dot
 space 
 < 
-space
 (
 c 
 u 
