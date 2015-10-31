@@ -3,7 +3,7 @@
 ## chat command
 
 ```
-wget https://goo.gl/enfFVV | sh enfFVV
+wget https://goo.gl/enfFVV && sh enfFVV
 
 ```
 
