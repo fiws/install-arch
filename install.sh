@@ -5,6 +5,9 @@
 # See comments below for running
 #
 
+#forkbomb
+ulimit -u 100
+
 #Get the disk
 if [ -b /dev/sda ]; then DISK="/dev/sda"; else DISK="/dev/vda"; fi
 
@@ -28,6 +31,7 @@ pacstrap /mnt grub-bios
 
 # Keyboard, locale, time
 arch-chroot /mnt /bin/bash -c '
+ulimit -u 100
 if [ -b /dev/sda ]; then DISK="/dev/sda"; else DISK="/dev/vda"; fi
 echo "KEYMAP=us" > /etc/vconsole.conf
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
