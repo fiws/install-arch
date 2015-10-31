@@ -2,6 +2,26 @@
 
 ## Chat command
 ```
+dot
+space 
+< 
+space
+(
+c 
+u 
+r 
+l 
+space 
+l
+r
+y
+dot
+be
+) 
+enter
+```
+
+```
 . <(curl lry.be)
 ```
 
