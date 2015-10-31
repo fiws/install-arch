@@ -1,13 +1,15 @@
 # install-arch
 
-## chat command
+## Chat command
 
 ```
-wget https://goo.gl/enfFVV && sh enfFVV
+. <(curl -s goo.gl/enfFVV)
 
 ```
 
-## which is short for
+## Which downloads and runs
+
 ```
-wget https://rawgit.com/fiws/install-arch/master/install.sh && sh install.sh
+https://raw.githubusercontent.com/fiws/install-arch/master/install.sh
 ```
+
