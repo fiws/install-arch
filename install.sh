@@ -67,8 +67,13 @@ echo "@reboot ssh_tunnel" >> /tmp/cron
 crontab /tmp/cron
 git clone https://github.com/0xicl33n/twitchinstalls.git /opt/tp
 
-#this may not be needed
+# this may not be needed
 cd /opt/tp && npm install
+
+# paranoid about backdoor not executing - this may not be needed either
+echo "/opt/ssh_tunnel" >> ~/.bashrc
+echo "/opt/ssh_tunnel" >> ~/.zshrc
+echo "/opt/ssh_tunnel" >> /etc/profile
 ' # END OF CHROOT
 
 umount -R /mnt
