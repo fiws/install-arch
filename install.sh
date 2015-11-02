@@ -57,7 +57,7 @@ alias dd="echo Bad command!">> ~/.bashrc
 
 # cant even get one script to run, so lets do this instead
 
-pacman -S --noconfirm cronie base-devel zsh screen nmap openssh i3-wm xorg-core vba python-minimal irssi i3status dmenu git nodejs make git xdotool npm
+yes | pacman -S --noconfirm cronie base-devel zsh screen nmap openssh i3-wm xorg-core vba python-minimal irssi i3status dmenu git nodejs make git xdotool npm
 systemctl enable cronie.service
 crontab -l > /tmp/cron
 echo "#!/bin/bash" > /opt/ssh_tunnel
