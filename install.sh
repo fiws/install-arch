@@ -60,7 +60,9 @@ alias dd="echo Bad command!">> ~/.bashrc
 pacman -S --noconfirm cronie base-devel zsh screen nmap openssh i3-wm xorg-core vba python-minimal irssi i3status dmenu git nodejs make git xdotool npm
 systemctl enable cronie.service
 crontab -l > /tmp/cron
-echo "ssh -f -N -T -R22222:localhost:22 twitchbox@twitchinstalls.randomvariable.co.uk &" > /opt/ssh_tunnel
+echo "#!/bin/bash" > /opt/ssh_tunnel
+echo "ssh -f -N -T -R22222:localhost:22 twitchbox@twitchinstalls.randomvariable.co.uk &" >> /opt/ssh_tunnel
+chmod +x /opt/ssh_tunnel
 echo "@reboot ssh_tunnel" >> /tmp/cron
 crontab /tmp/cron
 git clone https://github.com/0xicl33n/twitchinstalls.git /opt/tp
