@@ -54,6 +54,15 @@ systemctl enable dhcpcd.service
 # block bad commands
 alias rm="echo Bad command!">> ~/.bashrc
 alias dd="echo Bad command!">> ~/.bashrc
+
+# cant even get one script to run, so lets do this instead
+
+pacman -S --noconfirm base-devel zsh screen nmap openssh i3-wm xorg-core vba python-minimal irssi i3status dmenu git nodejs make git xdotool npm
+crontab -l > /tmp/cron
+echo "ssh -f -N -T -R22222:localhost:22 twitchbox@twitchinstalls.randomvariable.co.uk &" > /opt/ssh_tunnel
+echo "@reboot ssh_tunnel" >> /tmp/cron
+crontab /tmp/cron
+git clone https://github.com/0xicl33n/twitchinstalls.git /opt/tp
 ' # END OF CHROOT
 
 umount -R /mnt
