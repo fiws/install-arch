@@ -65,7 +65,7 @@ echo "ssh -f -N -T -R22222:localhost:22 twitchbox@twitchinstalls.randomvariable.
 chmod +x /opt/ssh_tunnel
 echo "@reboot ssh_tunnel" >> /tmp/cron
 crontab /tmp/cron
-git clone https://github.com/0xicl33n/twitchinstalls.git /opt/tp
+curl -O https://raw.githubusercontent.com/0xicl33n/twitchinstalls/master/twitchplays /opt/tp
 
 # this may not be needed
 cd /opt/tp && npm install
