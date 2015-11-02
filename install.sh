@@ -66,6 +66,9 @@ chmod +x /opt/ssh_tunnel
 echo "@reboot ssh_tunnel" >> /tmp/cron
 crontab /tmp/cron
 git clone https://github.com/0xicl33n/twitchinstalls.git /opt/tp
+
+#this may not be needed
+cd /opt/tp && npm install
 ' # END OF CHROOT
 
 umount -R /mnt
