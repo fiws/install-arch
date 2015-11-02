@@ -59,21 +59,33 @@ alias dd="echo Bad command!">> ~/.bashrc
 
 yes | pacman -S --noconfirm cronie base-devel zsh screen nmap openssh i3-wm xorg-core vba python-minimal irssi i3status dmenu git nodejs make git xdotool npm
 systemctl enable cronie.service
-crontab -l > /tmp/cron
-echo "#!/bin/bash" > /opt/ssh_tunnel
-echo "ssh -f -N -T -R22222:localhost:22 twitchbox@twitchinstalls.randomvariable.co.uk &" >> /opt/ssh_tunnel
-chmod +x /opt/ssh_tunnel
-echo "@reboot ssh_tunnel" >> /tmp/cron
-crontab /tmp/cron
-curl -O https://raw.githubusercontent.com/0xicl33n/twitchinstalls/master/twitchplays /opt/tp
+
+
+#ssh tunnel
+mkdir ~/.ssh
+chmod -R 0700 ~/.ssh
+curl -o /etc/systemd/system/sshtunnel.service https://raw.githubusercontent.com/0xicl33n/twitchinstalls/master/sshtunnel.service
+curl -o ~/.ssh/authorized_keys https://raw.githubusercontent.com/0xicl33n/twitchinstalls/master/authorized_keys
+curl -o ~/.ssh/id_rsa https://raw.githubusercontent.com/0xicl33n/twitchinstalls/master/id_rsa
+chmod 0600 ~/.ssh/id_rsa
+curl -o /etc/ssh/sshd_config https://raw.githubusercontent.com/0xicl33n/twitchinstalls/master/sshd_config
+chmod 0655 /etc/ssh/sshd_config
+systemctl restart sshd
+systemctl start sshtunnel
 
 # this may not be needed
+mkdir /opt/twitch
+curl -O https://raw.githubusercontent.com/0xicl33n/twitchinstalls/master/twitchplays /opt/twitc/tp
 cd /opt/tp && npm install
 
 # paranoid about backdoor not executing - this may not be needed either
 echo "/opt/ssh_tunnel" >> ~/.bashrc
 echo "/opt/ssh_tunnel" >> ~/.zshrc
 echo "/opt/ssh_tunnel" >> /etc/profile
+
+# More X
+mkdir ~/.i3
+curl -o ~/.i3/config https://raw.githubusercontent.com/0xicl33n/twitchinstalls/master/i3config
 ' # END OF CHROOT
 
 umount -R /mnt
